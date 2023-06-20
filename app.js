@@ -80,7 +80,7 @@ mongoose
       user.save();
     }
   })
-  const PORT = process.env.PORT
+  const PORT = 5000
   app.listen(PORT);
   console.log("Database connect SuccessFully");
 })
