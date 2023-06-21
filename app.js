@@ -14,8 +14,7 @@ const app = express();
 
 require('dotenv').config();
 
-const store = new MongoDBStore(
-  {
+const store = new MongoDBStore({
     uri : process.env.MONGODB_CONNECT_URI,
     collection : 'sessions'
   })
@@ -41,7 +40,6 @@ app.use(
 )
 
 app.use((req,res,next)=>{
-
   if(!req.session.user){
     return next();
   }
@@ -79,7 +77,7 @@ mongoose
       });
       user.save();
     }
-  })
+  });
   const PORT = 5000
   app.listen(PORT);
   console.log("Database connect SuccessFully");

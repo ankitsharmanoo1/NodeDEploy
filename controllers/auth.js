@@ -17,7 +17,7 @@ exports.postLogin = (req,res,next) =>{
             req.session.save(err =>{
                 console.log(err);
                 res.redirect('/');
-                next(); 
+                // next(); 
             })
         }
         )
