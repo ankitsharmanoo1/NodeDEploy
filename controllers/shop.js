@@ -103,8 +103,7 @@ exports.postOrder = (req, res, next) => {
          products:products
       });
       order.save();
-    }
-  )
+    })
 .then(result => {
   return req.user.clearCart();
 }).then(()=>{
@@ -115,7 +114,7 @@ exports.postOrder = (req, res, next) => {
 };
 
 exports.getOrders = (req, res, next) => {
-  Order.find({'user.userId':req.user._id})
+  Order.find({'user.userId': req.user._id})
     .then(orders => {
       res.render('shop/orders', {
         path: '/orders',
